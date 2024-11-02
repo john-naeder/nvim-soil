@@ -1,7 +1,7 @@
 # nvim-soil
 
-**DISCLAIMER**: This is just a modified version from the [orgins here](https://github.com/javiorfo/nvim-soil.git), a little optimization and changes 
-to make it works with fish shell.
+**DISCLAIMER**: This is just a stable modified version from the orgin [here](https://github.com/javiorfo/nvim-soil.git), a little optimization and changes 
+to make it works with fish shell were added.
 
 ### Soil for a plant (UML)
 *nvim-soil is a minimal plugin written in Lua for Plant UML.*
