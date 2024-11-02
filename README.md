@@ -15,7 +15,7 @@ to make it works with fish shell were added.
 ## Installation
 `Packer`
 ```lua
-use 'javiorfo/nvim-soil'
+use 'john-naeder/nvim-soil'
 
 -- Optional for puml syntax highlighting:
 use 'javiorfo/nvim-nyctophilia'
@@ -23,7 +23,7 @@ use 'javiorfo/nvim-nyctophilia'
 `Lazy`
 ```lua
 { 
-    'javiorfo/nvim-soil',
+    'john-naeder/nvim-soil',
 
     -- Optional for puml syntax highlighting:
     dependencies = { 'javiorfo/nvim-nyctophilia' },
