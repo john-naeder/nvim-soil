@@ -4,7 +4,7 @@ local M = {}
 M.DEFAULTS = {
   image = {
     darkmode = false,
-    format = "png",
+    format = "svg",
     execute_to_open = function(img)
       local viewer = os.getenv("OS") == "Windows_NT" and "jpeview" or "nsxiv -b"
       return viewer .. " " .. img
