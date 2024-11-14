@@ -12,24 +12,12 @@ local function validate()
     return false
   end
 
-  if os.getenv("OS") == "Windows_NT" then
-    if
-      vim.fn.executable("jpegview") == 0
-      and string.find(settings.image.execute_to_open(""), "jpegview")
-    then
-      Logger:warn(
-        "JPEGView is required on Windows. Install it to use this plugin."
-      )
-      return false
-    end
-  else
-    if
-      vim.fn.executable("nsxiv") == 0
-      and string.find(settings.image.execute_to_open(""), "nsxiv")
-    then
-      Logger:warn("Nsxiv is required on Linux. Install it to use this plugin.")
-      return false
-    end
+  if
+    vim.fn.executable("nsxiv") == 0
+    and string.find(settings.image.execute_to_open(""), "nsxiv")
+  then
+    Logger:warn("Nsxiv is required on Linux. Install it to use this plugin.")
+    return false
   end
 
   return true

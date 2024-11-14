@@ -6,8 +6,7 @@ M.DEFAULTS = {
     darkmode = true,
     format = "svg",
     execute_to_open = function(img)
-      return os.getenv("OS") == "Windows_NT" and "jpeview"
-        or "nsxiv " .. img
+      return os.getenv("OS") == "Windows_NT" and "start" or "nsxiv " .. img
     end,
   },
 }
