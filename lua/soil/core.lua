@@ -11,12 +11,27 @@ local function validate()
     Logger:warn("Java is required. Install it to use this plugin.")
     return false
   end
-  if vim.fn.executable("nsxiv") == 0 and settings.image.execute_to_open then
-    if string.find(settings.image.execute_to_open(""), "nsxiv") then
-      Logger:warn("Nsxiv is required. Install it to use this plugin.")
+
+  if os.getenv("OS") == "Windows_NT" then
+    if
+      vim.fn.executable("jpegview") == 0
+      and string.find(settings.image.execute_to_open(""), "jpegview")
+    then
+      Logger:warn(
+        "JPEGView is required on Windows. Install it to use this plugin."
+      )
+      return false
+    end
+  else
+    if
+      vim.fn.executable("nsxiv") == 0
+      and string.find(settings.image.execute_to_open(""), "nsxiv")
+    then
+      Logger:warn("Nsxiv is required on Linux. Install it to use this plugin.")
       return false
     end
   end
+
   return true
 end
 
@@ -38,7 +53,7 @@ local function execute_command(command, error_msg)
     vim.fn.system(command)
     if vim.v.shell_error ~= 0 then
       Logger:error(error_msg or "Execution error!")
-        end
+    end
   end
 end
 
